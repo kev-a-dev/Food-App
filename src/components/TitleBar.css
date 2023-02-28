@@ -1,0 +1,64 @@
+/* ---------- TITLE BAR ---------- */
+#title-bar {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+#title-bar .store-name {
+  font-size: 30px;
+  margin: 10px 30px;
+  color: dimgray;
+}
+
+/* ---------- SEARCH ---------- */
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+}
+
+.search-bar {
+  height: 40px;
+  width: 100%;
+  border: 2px solid lightgray;
+  border-radius: 50px;
+  padding-left: 40px;
+  font-size: 18px;
+  color: gray;
+}
+
+.search-bar:hover {
+  border: 2px solid skyblue;
+  outline: none;
+}
+.search-bar:focus + .fa-magnifying-glass {
+  color: rgb(101, 183, 216);
+}
+
+.fa-magnifying-glass {
+  position: absolute;
+  left: 14px;
+  color: gray;
+}
+
+/* ---------- LINKS ---------- */
+
+.link-list {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.link {
+  margin: 0 20px;
+  cursor: pointer;
+  color: gray;
+}
+

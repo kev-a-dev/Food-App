@@ -1,0 +1,110 @@
+#cart .underlay {
+  width: 300px;
+  height: 100%;
+  display: none;
+}
+
+#cart .container {
+  background-color: #f3f3f3;
+  position: fixed;
+  max-width: 300px;
+  width: 100%;
+  top: 120px;
+  bottom: 0;
+}
+
+#cart .cart-container {
+  width: 100%;
+}
+
+#cart .title-x-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#cart .title {
+  font-size: 24px;
+  margin: 20px 0 0 20px;
+  color: gray;
+}
+
+/* ---------- CHECKOUT BUTTON ---------- */
+#cart .checkout-button {
+  margin: 20px auto;
+  width: 86%;
+  height: 50px;
+  background: linear-gradient(45deg, rgb(1, 136, 255), rgb(47, 195, 255));
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#cart .checkout-button:hover {
+  transform: scale(1.025);
+  transition: 200ms;
+}
+
+#cart .checkout-button:active {
+  transform: scale(1);
+  transition: 50ms;
+}
+
+
+/* ---------- X ICON ---------- */
+#cart .fa-xmark {
+  position: absolute;
+  border: none;
+  background-color: lightgray;
+  padding: 8px 14px;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#cart .fa-xmark:hover {
+  transform: scale(1.1);
+  transition: 100ms;
+}
+
+#cart .fa-xmark {
+  font-size: 20px;
+}
+
+/* ---------- CART ACTIVE ---------- */
+
+#cart.active .underlay {
+  display: block;
+}
+
+#cart.active .fa-cart-shopping {
+  display: none;
+}
+/* ---------- CART ICON ---------- */
+
+.fa-cart-shopping {
+  color: white;
+  font-size: 40px;
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  padding: 14px 14px 10px 10px;
+  background: linear-gradient(45deg, rgb(1, 136, 255), rgb(47, 195, 255));
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px white;
+}
+
+.fa-cart-shopping:hover {
+  transform: scale(1.1);
+  transition: 200ms;
+}
+
+.fa-cart-shopping:active {
+  transform: scale(1);
+}
