@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Food-App/static/css/main.c0640c20.css",
-    "main.js": "/Food-App/static/js/main.cbb456bb.js",
+    "main.js": "/Food-App/static/js/main.5dbfb5ad.js",
     "static/media/smoothie.png": "/Food-App/static/media/smoothie.5e1d64764a78a76b5d72.png",
     "static/media/strawberryMatchaPhoto.png": "/Food-App/static/media/strawberryMatchaPhoto.5e1d64764a78a76b5d72.png",
     "static/media/strawberryPhoto.png": "/Food-App/static/media/strawberryPhoto.bbc31fa21883935479c6.png",
@@ -20,10 +20,10 @@
     "static/media/teaPhoto.png": "/Food-App/static/media/teaPhoto.437a27bb030a391b32f5.png",
     "index.html": "/Food-App/index.html",
     "main.c0640c20.css.map": "/Food-App/static/css/main.c0640c20.css.map",
-    "main.cbb456bb.js.map": "/Food-App/static/js/main.cbb456bb.js.map"
+    "main.5dbfb5ad.js.map": "/Food-App/static/js/main.5dbfb5ad.js.map"
   },
   "entrypoints": [
     "static/css/main.c0640c20.css",
-    "static/js/main.cbb456bb.js"
+    "static/js/main.5dbfb5ad.js"
   ]
 }
