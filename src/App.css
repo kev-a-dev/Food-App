@@ -19,3 +19,11 @@ body::-webkit-scrollbar {
   width: 100%;
   display: flex;
 }
+
+
+/* TEST */
+#productCard {
+  background-color: skyblue;
+  width: 100px;
+  margin: 10px;
+}

@@ -1,23 +1,55 @@
-.swiper {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #838383;
-    height: 100px;
-  
-    /* Center slide text vertically */
+#test-app {
     display: flex;
+}
+
+#test-list {
+    display: flex;
+}
+
+#test-item {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+}
+
+#test-modal {
+    width: 100px;
+    height: 100px;
+    background-color: lightpink;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#test-cart {
+    width: 200px;
+    height: 800px;
+    background-color: lightgray;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+}
+
+#test-cart .top-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#test-cart .cart-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-amount {
+    color: black;
+    padding: 2px 12px;
+}

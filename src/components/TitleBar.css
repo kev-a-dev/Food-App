@@ -1,27 +1,46 @@
 /* ---------- TITLE BAR ---------- */
 #title-bar {
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
   position: sticky;
   top: 0;
   background-color: white;
+  padding: 20px 0;
+  border-bottom: 2px solid lightgray;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  box-shadow: 0 0 4px lightgray;
 }
 
-#title-bar .store-name {
+/* ---------- STORE NAME ---------- */
+
+.store-name-wrapper {
+  display: flex;
+  flex: start;
+}
+
+.store-name {
   font-size: 30px;
-  margin: 10px 30px;
   color: dimgray;
+  margin: 0 0 0 40px;
+}
+
+/* ---------- NAV ---------- */
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 /* ---------- SEARCH ---------- */
+.search-bar-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
 
 .search-bar-container {
   display: flex;
   align-items: center;
-  max-width: 1000px;
   width: 100%;
   position: relative;
+  margin: 0 30px 0 80px;
 }
 
 .search-bar {
@@ -49,17 +68,4 @@
   color: gray;
 }
 
-/* ---------- LINKS ---------- */
-
-.link-list {
-  display: flex;
-  align-items: center;
-  margin: 0 20px;
-}
-
-.link {
-  margin: 0 20px;
-  cursor: pointer;
-  color: gray;
-}
 

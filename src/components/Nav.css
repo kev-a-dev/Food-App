@@ -1,22 +1,25 @@
 #nav {
-    position: fixed;
-    z-index: 1;
+    /* position: fixed;
+    z-index: 1; */
+    margin: 4px 0 0 0;
 }
 
 #nav .navbar {
     display: flex;
     justify-content: center;
-    position: fixed;
-    box-shadow: 0 0 2px gray;
-    left: 0;
-    right: 0;
     background-color: white;
+    align-items: center;
+    /* box-shadow: 0 0 2px gray;
+    position: fixed;
+    left: 0;
+    right: 0; */
 }
 
 #nav .drink-links {
     width: 50%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 #nav img {
@@ -28,10 +31,11 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 0 20px;
     font-weight: bold;
-    color: gray;
+    color: dimgray;
     transition: 300ms;
+    white-space: nowrap;
 }
 
 #nav .drink-link:hover {

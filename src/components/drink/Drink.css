@@ -1,16 +1,16 @@
 /* ---------- DRINK LIST ----------  */
 #drink-list {
-  margin: 30px 60px 30px 30px;
+  margin: -10px 60px 30px 30px;
   width: 100%;
 }
 
 #drink-list section {
-  scroll-margin: 150px;
+  scroll-margin: 130px;
 }
 
 #drink-list .title {
   font-size: 24px;
-  color: gray;
+  color: dimgray;
   margin: 50px 20px 20px;
 }
 
@@ -26,10 +26,14 @@
   /* z-index: -1; */
 } 
 
+#drink-list .price{
+  font-weight: normal;
+}
+
 /* ---------- DRINK ----------  */
 #drink .container {
   box-shadow: 0 0 4px gray;
-  color: gray;
+  color: dimgray;
   border-radius: 20px;
   cursor: pointer;
   display: flex;

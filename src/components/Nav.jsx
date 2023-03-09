@@ -4,7 +4,7 @@ import boba from '../assets/boba.png';
 import tea from '../assets/tea.png';
 import fruit from '../assets/fruit.png';
 import smoothie from '../assets/smoothie.png';
-import newTea from '../assets/newTea.png';
+// import newTea from '../assets/newTea.png';
 
 export default function Nav() {
 
@@ -29,10 +29,10 @@ export default function Nav() {
               <img src={smoothie} alt="" />
               Smoothies
             </a>
-            <a href="#comingSoon" className="drink-link">
+            {/* <a href="#comingSoon" className="drink-link">
               <img src={newTea} alt="" />
               Coming soon...
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

@@ -1,19 +1,25 @@
 import React from "react";
 import "./DrinkModal.css";
 
-export default function DrinkModal(props) {
-  const { name, price, info, photo, closeModal } = props;
+export default function DrinkModal( {drink, addToCart, closeModal}) {
+  const { name, price, info, photo } = drink;
 
-  function add() {
+  drink.quantity = 1;
+
+  function add(drink) {
     let input = document.getElementById('amount');
     input.value = parseInt(input.value) + 1;
+    drink.quantity += 1
   }
   
-  function minus() {
+  function minus(drink) {
     let input = document.getElementById('amount');
     input.value = parseInt(input.value);
     if (input.value > 1){
       input.value -= 1;
+    }
+    if (drink.quantity > 1){
+      drink.quantity -= 1
     }
   }
 
@@ -23,7 +29,7 @@ export default function DrinkModal(props) {
 
       <div className="container">
         <button className="close-button" onClick={closeModal}>
-          <i class="fa-solid fa-xmark"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
 
         <div className="content-container">
@@ -32,7 +38,7 @@ export default function DrinkModal(props) {
             <img src={photo} alt="" />
             <h3 className="name">{name}</h3>
             <h3 className="info">{info}</h3>
-            <div className="price">{price}</div>
+            <div className="price">${price.toFixed(2)}</div>
           </div>
 
           <div className="modal-border"/>
@@ -41,6 +47,7 @@ export default function DrinkModal(props) {
             
             <div className="customizations">
               
+              {/* SUGAR LEVEL */}
               <div className="custom-container">
                 <h4 className="custom-title">Sugar Level</h4>
                 <div className="options">
@@ -51,7 +58,8 @@ export default function DrinkModal(props) {
                   <label><input type="radio" name='sugar' className="checkbox"></input>0%</label>
                 </div>
               </div>
-              
+
+              {/* ICE LEVEL */}
               <div className="custom-container">
                 <h4 className="custom-title">Ice Level</h4>
                 <div className="options">
@@ -59,14 +67,15 @@ export default function DrinkModal(props) {
                   <label><input type="radio" name='ice' className="checkbox"></input>Half</label>
                 </div>
               </div>
-              
+
+              {/* TOPPINGS */}
               <div className="custom-container">
                 <h4 className="custom-title">Toppings</h4>
                 <div className="options">
 
                   <div className="topping-container">
                     <label className="topping-label">
-                      <input type="radio" name='topping' className="checkbox"></input>
+                      <input type="checkbox" className="checkbox"></input>
                         Boba
                       <div className="topping-price">+$0.50</div>
                     </label>
@@ -74,7 +83,7 @@ export default function DrinkModal(props) {
 
                   <div className="topping-container">
                     <label className="topping-label">
-                      <input type="radio" name='topping' className="checkbox"></input>
+                      <input type="checkbox" className="checkbox"></input>
                         Mini Boba
                       <div className="topping-price">+$0.50</div>
                     </label>
@@ -82,15 +91,15 @@ export default function DrinkModal(props) {
 
                   <div className="topping-container">
                     <label className="topping-label">
-                      <input type="radio" name='topping' className="checkbox"></input>
-                        Mochi
-                      <div className="topping-price">+$0.50</div>
+                      <input type="checkbox" className="checkbox"></input>
+                        Creme Brulee
+                      <div className="topping-price">+$1.00</div>
                     </label>
                   </div>
 
                   <div className="topping-container">
                     <label className="topping-label">
-                      <input type="radio" name='topping' className="checkbox"></input>
+                      <input type="checkbox" className="checkbox"></input>
                         Egg Pudding
                       <div className="topping-price">+$0.50</div>
                     </label>
@@ -98,40 +107,60 @@ export default function DrinkModal(props) {
 
                   <div className="topping-container">
                     <label className="topping-label">
-                      <input type="radio" name='topping' className="checkbox"></input>
-                        Cheese Mousse
-                      <div className="topping-price">+$1.00</div>
+                      <input type="checkbox" className="checkbox"></input>
+                        Taro
+                      <div className="topping-price">+$0.50</div>
                     </label>
                   </div>
 
                   <div className="topping-container">
                     <label className="topping-label">
-                      <input type="radio" name='topping' className="checkbox"></input>
-                      None
+                      <input type="checkbox" className="checkbox"></input>
+                        Grass Jelly
+                      <div className="topping-price">+$0.50</div>
                     </label>
                   </div>
+
+                  <div className="topping-container">
+                    <label className="topping-label">
+                      <input type="checkbox" className="checkbox"></input>
+                        Mochi
+                      <div className="topping-price">+$0.50</div>
+                    </label>
+                  </div>
+
+                  <div className="topping-container">
+                    <label className="topping-label">
+                      <input type="checkbox" name=" " className="checkbox"></input>
+                        Aloe
+                      <div className="topping-price">+$0.50</div>
+                    </label>
+                  </div>
+
                 </div>
               </div>
 
+              {/* SPECIAL REQUESTS */}
               <div className="custom-container">
                 <h4 className="custom-title">Special Requests</h4>
-                <textarea type="text" className="request" placeholder="Drink adjustments, half toppings, hot drink, etc."/>
+                <textarea type="text" className="request" placeholder="Extra toppings, half toppings, hot drink, etc."/>
               </div>
 
             </div>
 
+            <div className="add-to-cart-border"/>
+
             <div className="add-to-cart">
 
-              <div className="add-to-cart-border"/>
-
               <div className="amount">
-                <button className="minus" onClick={minus}>-</button>
-                  <input type="number" value={1} id="amount"/>
-                <button className="add"onClick={add}>+</button>
+                <button className="minus" onClick={()=>minus(drink)}>-</button>
+                  <input id="amount" type="number" defaultValue={1}/>
+                <button className="add"onClick={()=>add(drink)}>+</button>
               </div>
 
-              <div className="add-to-cart-wrapper">
-                <button className="add-to-cart-button">Add To Cart</button>
+              <div className="add-to-cart-wrapper" onClick={closeModal}>
+                <button className="add-to-cart-button" onClick={()=>addToCart(drink)}>Add To Cart</button>
+  
               </div>
               
             </div>
