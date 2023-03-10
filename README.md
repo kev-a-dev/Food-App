@@ -1,11 +1,12 @@
 
 # Food Ordering Application (in progress)
 
-An online food ordering system that focuses on boba tea.
+My first React application which is an online food ordering system that focuses on boba tea.
 
 Notable features:
-- item customizations
+- beautiful UI (at least I think it is)
 - shopping cart system
+- item customizations
 - search and filter bar
 - click and drag category carousel
 
