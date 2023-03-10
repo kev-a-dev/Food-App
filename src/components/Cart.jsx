@@ -1,10 +1,16 @@
 import React, {useState, useEffect} from "react";
 import "./Cart.css";
+import sad from '../assets/sad.png';
 
-export default function Cart({ size, cart, setCart}) {
+export default function Cart({ cart, setCart}) {
   const [totalPrice, setTotalPrice] = useState(0);
+  const custom = [];
   
   let totalAmount = 0
+
+  if (cart.length > 0){
+    document.getElementById('no-items-wrapper').classList.add('active');
+  }
 
   for (let i in cart){
     totalAmount += cart[i].quantity;
@@ -26,6 +32,7 @@ export default function Cart({ size, cart, setCart}) {
   
   // delete drink
   function remove(index) {
+    document.getElementById('no-items-wrapper').classList.remove('active');
     const newCart = cart.filter(function(item) {
       return item.id !== index;
     })
@@ -49,19 +56,28 @@ export default function Cart({ size, cart, setCart}) {
           <i className="fa-solid fa-xmark" onClick={toggleCart}></i>
         </div>
 
-        <div className="item-list">
-          {cart.map((item, index) => (
+        <div className="item-list">    
+
+          <div id="no-items-wrapper">
+            <div>There are zero items in cart</div>
+            <img src={sad} alt="" />
+          </div>
+
+          {
+          cart.map((item, index) => (
             <div className="item" key={index}>
               <div className="item-price-wrapper">
                 <div className="quantity-name-wrapper">
                   <h4 className="item-quantity">{item.quantity} x</h4>
                   <h4 className="item-name">{item.name}</h4>
+                  <h4>{custom}</h4>
                 </div>
                 <h4 className="item-price">${(item.quantity * item.price).toFixed(2)}</h4>
               </div>
               <button className="remove-button" onClick={()=>remove(item.id)}>Remove</button>
             </div>
-          ))}
+          ))
+          }
         </div>
 
         <div className="checkout-button-wrapper">

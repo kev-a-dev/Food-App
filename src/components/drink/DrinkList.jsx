@@ -2,7 +2,7 @@ import React from "react";
 import Drink from "./Drink";
 import drinks from "../../data";
 
-export default function DrinkList({addToCart}) {
+export default function DrinkList({addToCart, custom, setCustom}) {
 
   return (
     <section id="drink-list">
@@ -11,7 +11,7 @@ export default function DrinkList({addToCart}) {
         <div className="category">
           {drinks.map((drink, index) => (
             drink.category === 'popular' ? (
-              <Drink key={index} drink={drink} addToCart={addToCart}/>
+              <Drink key={index} drink={drink} addToCart={addToCart} custom={custom} setCustom={custom}/>
             ) : null
           ))}
         </div>
@@ -21,7 +21,7 @@ export default function DrinkList({addToCart}) {
         <div className="category">
           {drinks.map((drink, index) => (
               drink.category === 'fresh' ? (
-                <Drink key={index} drink={drink} addToCart={addToCart}/>
+                <Drink key={index} drink={drink} addToCart={addToCart} custom={custom} setCustom={custom}/>
               ) : null
           ))}
         </div>
@@ -31,7 +31,7 @@ export default function DrinkList({addToCart}) {
         <div className="category">
           {drinks.map((drink, index) => (
               drink.category === 'fruit' ? (
-                <Drink key={index} drink={drink} addToCart={addToCart}/>
+                <Drink key={index} drink={drink} addToCart={addToCart} custom={custom} setCustom={custom}/>
               ) : null
           ))}
         </div>
@@ -41,7 +41,7 @@ export default function DrinkList({addToCart}) {
         <div className="category">
           {drinks.map((drink, index) => (
               drink.category === 'smoothie' ? (
-                <Drink key={index} drink={drink} addToCart={addToCart}/>
+                <Drink key={index} drink={drink} addToCart={addToCart} custom={custom} setCustom={custom}/>
               ) : null
           ))}
         </div>

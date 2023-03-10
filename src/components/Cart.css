@@ -80,7 +80,6 @@
 
 #cart .title {
   font-size: 24px;
-  margin: 0 20px 0 0;
   color: dimgray;
 }
 
@@ -102,9 +101,33 @@
   font-size: 20px;
 }
 
+
 /* ---------- ITEMS ---------- */
+#no-items-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 100px 0;
+}
+
+#no-items-wrapper div {
+  margin: 40px;
+  color: dimgray;
+}
+
+#no-items-wrapper.active{
+  display: none;
+}
+
 #cart .item-list {
   background-color: white;
+  overflow: auto;
+  height: 80vh;
+}
+
+#cart .item-list::-webkit-scrollbar {
+  display: none;
 }
 
 #cart .item {
@@ -141,6 +164,7 @@
 
 /* ---------- CHECKOUT BUTTON ---------- */
 #cart .checkout-button-wrapper {
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   position: absolute;

@@ -1,10 +1,14 @@
 import React from "react";
 import "./DrinkModal.css";
 
-export default function DrinkModal( {drink, addToCart, closeModal}) {
+export default function DrinkModal( {drink, addToCart, closeModal, custom, setCustom}) {
   const { name, price, info, photo } = drink;
-
   drink.quantity = 1;
+
+  const handleRadioClick = (event) => {
+    custom.push(event.target.innerText);
+    console.log(custom)
+  }
 
   function add(drink) {
     let input = document.getElementById('amount');
@@ -51,7 +55,7 @@ export default function DrinkModal( {drink, addToCart, closeModal}) {
               <div className="custom-container">
                 <h4 className="custom-title">Sugar Level</h4>
                 <div className="options">
-                  <label><input type="radio" name='sugar' className="checkbox"></input>100%</label>
+                  <label onClick={handleRadioClick}><input type="radio" name='sugar' className="checkbox"></input>100%</label>
                   <label><input type="radio" name='sugar' className="checkbox"></input>75%</label>
                   <label><input type="radio" name='sugar' className="checkbox"></input>50%</label>
                   <label><input type="radio" name='sugar' className="checkbox"></input>25%</label>

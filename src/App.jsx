@@ -13,18 +13,15 @@ function App() {
   function addToCart(items){
     const newItem = {...items, id:uuidv4()};
     setCart([...cart, newItem]);
-    
   }
-
-  console.log(cart)
 
   return (
     <section id="app">
-      <TitleBar />
-      <div className="container">
-        <DrinkList addToCart={addToCart}/>
-        <Cart size={cart.length} cart={cart} setCart={setCart}/>
-      </div>
+       <TitleBar />
+       <div className="container">
+         <DrinkList addToCart={addToCart}/>
+         <Cart size={cart.length} cart={cart} setCart={setCart}/>
+       </div>
       {/* <TestApp/> */}
     </section>
   );

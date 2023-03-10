@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Drink.css";
 import DrinkModal from "./DrinkModal";
 
-export default function Drink({drink, addToCart}) {
+export default function Drink({drink, addToCart, custom, setCustom}) {
   const { name, price, info, photo } = drink;
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -34,6 +34,8 @@ export default function Drink({drink, addToCart}) {
           drink={drink}
           closeModal={closeModal}
           addToCart={addToCart}
+          custom={custom}
+          setCustom={custom}
         />
       )}
       

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import TestContext from "./TestContext";
 
-export default function TestCart({size, cart, setCart, amount}) {
+export default function TestCart(item) {
+  const { cart, setCart } = useContext(TestContext);
+
   const [price, setPrice] = useState(0);
 
   const handlePrice = () => {
@@ -26,23 +28,30 @@ export default function TestCart({size, cart, setCart, amount}) {
 
   return (
     <div id="test-cart">
+
       <div className="top-wrapper">
-        <h3 className="cart-amount">Items: {size}</h3>
         <h1>cart</h1>
       </div>
+
       <div id="cart-list">
       {
         cart.map((i, index) => (
           <div className="cart-box" key={index}>
             <h3>{i.amount}x</h3>
             <h3>{i.name}</h3>
+            <h3>{i.sugar}</h3>
+            <h3>{i.custom.map((c, index) => (
+              <h3 key={index}>{c} </h3>
+            ))}</h3>
             <h3>${i.price}</h3>
             <button onClick={()=>handleRemove(i.id)}>remove</button>
           </div>
         ))
       } 
       </div>
+
       <div>Total ${price}</div>
+
     </div>
   );
 }
