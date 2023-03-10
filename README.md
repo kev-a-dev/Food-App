@@ -1,10 +1,13 @@
 
 # Food Ordering Application (in progress)
 
-A food ordering application similar to the self serve tablets in restaurants. 
-My application focuses on boba tea which includes many categories of drinks and ingredient customizations. 
+An online food ordering system that focuses on boba tea.
 
-This as my first React project with backend features such as passing around data between components.
+Notable features:
+- item customizations
+- shopping cart system
+- search and filter bar
+- click and drag category carousel
 
 Drink images are from: https://www.flaticon.com/
 
