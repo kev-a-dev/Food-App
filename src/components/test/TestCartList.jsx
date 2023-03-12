@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import Drink from "../drink/Drink";
 import { drinks, categoryList } from "../../data";
-import AppContext from "../AppContext";
+import TestSearch from "./TestSearch";
 
-export default function DrinkList() {
-  const {searchTerm} = useContext(AppContext);
+export default function TestCartList() {
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <section id="drink-list">
-      
+      <TestSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       {categoryList.map((category, index) => (
         <section key={index} id={category.title}>
@@ -28,3 +28,4 @@ export default function DrinkList() {
     </section>
   );
 }
+

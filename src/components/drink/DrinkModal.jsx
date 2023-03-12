@@ -1,15 +1,46 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./DrinkModal.css";
+import {toppings} from '../../data';
 
-export default function DrinkModal( {drink, addToCart, closeModal, custom, setCustom}) {
-  const { name, price, info, photo } = drink;
+import AppContext from "../AppContext";
+
+export default function DrinkModal( {drink, closeModal}) {
+
+  const {addToCart} = useContext(AppContext)
+
+  // reset drink
   drink.quantity = 1;
+  drink.sugar = '';
+  drink.ice = '';
+  drink.custom = [];
 
-  const handleRadioClick = (event) => {
-    custom.push(event.target.innerText);
-    console.log(custom)
+  // adjust drink
+  const handleSugar = (sugar) => {
+    drink.sugar = sugar;
   }
 
+  const handleIce = (ice) => {
+    drink.ice = ice;
+  }
+
+  const handleTopping = (event) => {
+    const topping = event.target.value;
+    const price = parseFloat(event.target.getAttribute('price'));
+    const isChecked = event.target.checked;
+
+    if (isChecked) {
+      drink.custom.push({topping, price});
+      console.log(drink.custom)
+    } else {
+      for (let i in drink.custom) {
+        if (drink.custom[i] === topping){
+          drink.custom.splice(drink.custom[i]);
+        }
+      }
+    }
+  }
+
+  // adjust quantity
   function add(drink) {
     let input = document.getElementById('amount');
     input.value = parseInt(input.value) + 1;
@@ -27,11 +58,34 @@ export default function DrinkModal( {drink, addToCart, closeModal, custom, setCu
     }
   }
 
+  // required modal open close
+  function requiredModal() {
+    document.getElementById('required-modal').classList.toggle('active');
+    document.getElementById('required-underlay').classList.toggle('active');
+    document.getElementById('required-underlay2').classList.toggle('active');
+  }
+
   return (
     <section id="drink-modal">
-      <div className="underlay" onClick={closeModal}></div>
 
+      <div className="underlay" onClick={closeModal}></div>
+      <div id="required-underlay" onClick={requiredModal}></div>
+      
+      
       <div className="container">
+
+        <div id="required-modal">
+
+          <h3 className="please">Please select: </h3> 
+          <div>
+            <h3 className="sugar-ice">Sugar Level <span> <h4>and</h4> </span> Ice Level</h3>
+          </div>
+
+          <button onClick={requiredModal}>OK</button>
+        </div>
+        
+        <div id="required-underlay2" onClick={requiredModal}></div>
+
         <button className="close-button" onClick={closeModal}>
           <i className="fa-solid fa-xmark"></i>
         </button>
@@ -39,10 +93,10 @@ export default function DrinkModal( {drink, addToCart, closeModal, custom, setCu
         <div className="content-container">
 
           <div className="content">
-            <img src={photo} alt="" />
-            <h3 className="name">{name}</h3>
-            <h3 className="info">{info}</h3>
-            <div className="price">${price.toFixed(2)}</div>
+            <img src={drink.photo} alt="" />
+            <h3 className="name">{drink.name}</h3>
+            <h3 className="info">{drink.info}</h3>
+            <div id="price">${drink.price.toFixed(2)}</div>
           </div>
 
           <div className="modal-border"/>
@@ -53,22 +107,23 @@ export default function DrinkModal( {drink, addToCart, closeModal, custom, setCu
               
               {/* SUGAR LEVEL */}
               <div className="custom-container">
-                <h4 className="custom-title">Sugar Level</h4>
+                <h4 className="custom-title">Sugar Level <span> <h4 className="required">(Required)</h4></span> </h4> 
                 <div className="options">
-                  <label onClick={handleRadioClick}><input type="radio" name='sugar' className="checkbox"></input>100%</label>
-                  <label><input type="radio" name='sugar' className="checkbox"></input>75%</label>
-                  <label><input type="radio" name='sugar' className="checkbox"></input>50%</label>
-                  <label><input type="radio" name='sugar' className="checkbox"></input>25%</label>
-                  <label><input type="radio" name='sugar' className="checkbox"></input>0%</label>
+                  <label onClick={()=>handleSugar('100% Sugar')}><input type="radio" name='sugar' className="checkbox"></input>100%</label>
+                  <label onClick={()=>handleSugar('75% Sugar')}><input type="radio" name='sugar' className="checkbox"></input>75%</label>
+                  <label onClick={()=>handleSugar('50% Sugar')}><input type="radio" name='sugar' className="checkbox"></input>50%</label>
+                  <label onClick={()=>handleSugar('25% Sugar')}><input type="radio" name='sugar' className="checkbox"></input>25%</label>
+                  <label onClick={()=>handleSugar('0% Sugar')}><input type="radio" name='sugar' className="checkbox"></input>0%</label>
                 </div>
               </div>
 
               {/* ICE LEVEL */}
               <div className="custom-container">
-                <h4 className="custom-title">Ice Level</h4>
+                <h4 className="custom-title">Ice Level <span> <h4 className="required">(Required)</h4></span></h4>
                 <div className="options">
-                  <label><input type="radio" name='ice' className="checkbox"></input>Regular</label>
-                  <label><input type="radio" name='ice' className="checkbox"></input>Half</label>
+                  <label onClick={()=>handleIce('Regular Ice')}><input type="radio" name='ice' className="checkbox"></input>Regular Ice</label>
+                  <label onClick={()=>handleIce('Less Ice')}><input type="radio" name='ice' className="checkbox"></input>Less Ice</label>
+                  <label onClick={()=>handleIce('No Ice')}><input type="radio" name='ice' className="checkbox"></input>No Ice</label>
                 </div>
               </div>
 
@@ -77,69 +132,15 @@ export default function DrinkModal( {drink, addToCart, closeModal, custom, setCu
                 <h4 className="custom-title">Toppings</h4>
                 <div className="options">
 
-                  <div className="topping-container">
+                  {toppings.map((topping, index) => (
+                    <div className="topping-container" key={index}>
                     <label className="topping-label">
-                      <input type="checkbox" className="checkbox"></input>
-                        Boba
-                      <div className="topping-price">+$0.50</div>
+                      <input type="checkbox" className="checkbox" value={topping.name} price={topping.price} onChange={handleTopping}></input>
+                        {topping.name}
+                      <div className="topping-price">+ ${topping.price.toFixed(2)}</div>
                     </label>
                   </div>
-
-                  <div className="topping-container">
-                    <label className="topping-label">
-                      <input type="checkbox" className="checkbox"></input>
-                        Mini Boba
-                      <div className="topping-price">+$0.50</div>
-                    </label>
-                  </div>
-
-                  <div className="topping-container">
-                    <label className="topping-label">
-                      <input type="checkbox" className="checkbox"></input>
-                        Creme Brulee
-                      <div className="topping-price">+$1.00</div>
-                    </label>
-                  </div>
-
-                  <div className="topping-container">
-                    <label className="topping-label">
-                      <input type="checkbox" className="checkbox"></input>
-                        Egg Pudding
-                      <div className="topping-price">+$0.50</div>
-                    </label>
-                  </div>
-
-                  <div className="topping-container">
-                    <label className="topping-label">
-                      <input type="checkbox" className="checkbox"></input>
-                        Taro
-                      <div className="topping-price">+$0.50</div>
-                    </label>
-                  </div>
-
-                  <div className="topping-container">
-                    <label className="topping-label">
-                      <input type="checkbox" className="checkbox"></input>
-                        Grass Jelly
-                      <div className="topping-price">+$0.50</div>
-                    </label>
-                  </div>
-
-                  <div className="topping-container">
-                    <label className="topping-label">
-                      <input type="checkbox" className="checkbox"></input>
-                        Mochi
-                      <div className="topping-price">+$0.50</div>
-                    </label>
-                  </div>
-
-                  <div className="topping-container">
-                    <label className="topping-label">
-                      <input type="checkbox" name=" " className="checkbox"></input>
-                        Aloe
-                      <div className="topping-price">+$0.50</div>
-                    </label>
-                  </div>
+                  ))}
 
                 </div>
               </div>
@@ -162,8 +163,8 @@ export default function DrinkModal( {drink, addToCart, closeModal, custom, setCu
                 <button className="add"onClick={()=>add(drink)}>+</button>
               </div>
 
-              <div className="add-to-cart-wrapper" onClick={closeModal}>
-                <button className="add-to-cart-button" onClick={()=>addToCart(drink)}>Add To Cart</button>
+              <div className="add-to-cart-wrapper">
+                <button className="add-to-cart-button" onClick={()=>addToCart(drink, requiredModal, closeModal)}>Add To Cart</button>
   
               </div>
               
@@ -173,6 +174,7 @@ export default function DrinkModal( {drink, addToCart, closeModal, custom, setCu
 
         </div>
       </div>
+
     </section>
   );
 }

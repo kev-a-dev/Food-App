@@ -1,6 +1,4 @@
-#nav {
-    /* position: fixed;
-    z-index: 1; */
+ #nav {
     margin: 4px 0 0 0;
 }
 
@@ -9,16 +7,12 @@
     justify-content: center;
     background-color: white;
     align-items: center;
-    /* box-shadow: 0 0 2px gray;
-    position: fixed;
-    left: 0;
-    right: 0; */
+    width: 100%;
 }
 
 #nav .drink-links {
-    width: 50%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
 }
 
@@ -31,11 +25,11 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    margin: 0 20px;
     font-weight: bold;
     color: dimgray;
     transition: 300ms;
     white-space: nowrap;
+    margin: 0 20px;
 }
 
 #nav .drink-link:hover {
@@ -46,6 +40,9 @@
 #nav .drink-link:active {
     transform: scale(.9);
     transform: 50ms;
+} 
+
+/* swiper */
+.swiper-slide{
+    margin: 0 100px 0 0;
 }
-
-
