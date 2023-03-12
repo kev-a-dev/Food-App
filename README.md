@@ -8,7 +8,6 @@ Notable features:
 - shopping cart system
 - item customizations
 - search and filter bar
-- click and drag category carousel
 
 Drink images are from: https://www.flaticon.com/
 
