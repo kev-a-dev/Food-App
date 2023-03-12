@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Food-App/static/css/main.5b6811e7.css",
-    "main.js": "/Food-App/static/js/main.74e7cbe4.js",
+    "main.css": "/Food-App/static/css/main.136586d5.css",
+    "main.js": "/Food-App/static/js/main.bc1c7bd0.js",
     "static/media/smoothie.png": "/Food-App/static/media/smoothie.5e1d64764a78a76b5d72.png",
     "static/media/strawberryMatchaPhoto.png": "/Food-App/static/media/strawberryMatchaPhoto.5e1d64764a78a76b5d72.png",
     "static/media/strawberryPhoto.png": "/Food-App/static/media/strawberryPhoto.bbc31fa21883935479c6.png",
@@ -11,18 +11,18 @@
     "static/media/blackTea.png": "/Food-App/static/media/blackTea.a9291cf61b44e0a2dfe9.png",
     "static/media/fruitPhoto.png": "/Food-App/static/media/fruitPhoto.215c423b1cf7b31f124b.png",
     "static/media/greenTea.png": "/Food-App/static/media/greenTea.b259a629107d47bc518e.png",
-    "static/media/sad.png": "/Food-App/static/media/sad.69ad3a7904562e0bffe4.png",
+    "static/media/wink.png": "/Food-App/static/media/wink.4f99c9e05d73e7eba7ad.png",
     "static/media/tea.png": "/Food-App/static/media/tea.67d51d05b730f3734047.png",
     "static/media/mangoPhoto.png": "/Food-App/static/media/mangoPhoto.15a0c3bd35d002cf1afb.png",
     "static/media/watermelonPhoto.png": "/Food-App/static/media/watermelonPhoto.bc323db0586609ebd56b.png",
     "static/media/orangePhoto.png": "/Food-App/static/media/orangePhoto.9fe9e14cbb980db24398.png",
     "static/media/teaPhoto.png": "/Food-App/static/media/teaPhoto.437a27bb030a391b32f5.png",
     "index.html": "/Food-App/index.html",
-    "main.5b6811e7.css.map": "/Food-App/static/css/main.5b6811e7.css.map",
-    "main.74e7cbe4.js.map": "/Food-App/static/js/main.74e7cbe4.js.map"
+    "main.136586d5.css.map": "/Food-App/static/css/main.136586d5.css.map",
+    "main.bc1c7bd0.js.map": "/Food-App/static/js/main.bc1c7bd0.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b6811e7.css",
-    "static/js/main.74e7cbe4.js"
+    "static/css/main.136586d5.css",
+    "static/js/main.bc1c7bd0.js"
   ]
 }
