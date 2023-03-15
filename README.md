@@ -4,7 +4,6 @@
 My first React application which is an online food ordering system that focuses on boba tea.
 
 Notable features:
-- clean UI
 - shopping cart system
 - item customizations
 - search and filter bar
