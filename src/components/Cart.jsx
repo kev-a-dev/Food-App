@@ -1,14 +1,21 @@
+// stripe publish key: pk_test_51MkxKyKlVI2SIvCipJZyjmU47oTo6QfTm3Z9wjKY5HsWwc2v36MayN1FbGqCCMqYdCP6BBdTqEynDUZhj7yUjpGF00M0A2o44l
+// stripe secret key: sk_test_51MkxKyKlVI2SIvCidWsWMhqblKbIgM1OlOIzeUrvzSRCkliVcRK5AolFC2qzLIXgTD85Ym03ylTBt9GW4yxFyYhT00cvk7ghIU
+
 import React, {useState, useEffect, useContext} from "react";
 import "./Cart.css";
 import wink from '../assets/wink.png';
 import AppContext from "./AppContext";
+
+import Stripe from 'stripe';
+const stripe = Stripe('sk_test_51MkxKyKlVI2SIvCidWsWMhqblKbIgM1OlOIzeUrvzSRCkliVcRK5AolFC2qzLIXgTD85Ym03ylTBt9GW4yxFyYhT00cvk7ghIU');
+
 
 export default function Cart() {
 
   const {cart, setCart} = useContext(AppContext);
 
   const [totalPrice, setTotalPrice] = useState(0);
-  
+
   // sets total cart amount
   let totalAmount = 0;
 
@@ -55,7 +62,37 @@ export default function Cart() {
   // toggle cart display
   function toggleCart() {
     document.getElementById("cart").classList.toggle("active");
+    if (window.innerWidth <= 1400) {
+      if (document.body.classList.contains('scroll-stop')){
+        document.body.classList.remove("scroll-stop");
+      } else {
+        document.body.classList.add("scroll-stop");
+      }
+    }
   }
+
+  function checkout() {
+    stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: cart.map(item => ({
+        price_data: {
+          currency: 'usd',
+          product_data: 
+          {
+            name: item.name,
+          },
+          unit_amount: getItemPrice(item) * 100, 
+        },
+        quantity: item.quantity,
+      })),
+      mode: 'payment',
+      success_url: 'http://localhost:3000/success', 
+      cancel_url: 'http://localhost:3000/cart', 
+    }).then(session => {
+      window.location.href = session.url;
+    });
+  }
+  
   
   return (
     <section id="cart">
@@ -105,11 +142,10 @@ export default function Cart() {
             <div>There are zero items in cart</div>
             <img src={wink} alt="" />
           </div>
-
         </div>
 
         <div className="checkout-button-wrapper">
-          <button className="checkout-button">
+          <button className="checkout-button" onClick={checkout}>
             <h4 className="cart-total">{totalAmount}</h4>
             Checkout
             <h4 className="cart-price">${totalPrice.toFixed(2)}</h4>

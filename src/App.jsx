@@ -7,8 +7,6 @@ import TitleBar from "./components/TitleBar";
 import DrinkList from "./components/drink/DrinkList";
 import Cart from "./components/Cart";
 
-// import TestApp from "./components/test/TestApp";
-
 function App() {
 
   return (
@@ -23,10 +21,7 @@ function App() {
           <Cart />
         </div>
 
-
       </section>
-      
-      {/* <TestApp/> */}
 
     </AppContextProvider>
   );

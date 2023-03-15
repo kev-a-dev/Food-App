@@ -17,9 +17,13 @@ const categoryList = [
   {title: 'Smoothies', category: 'Smoothie'}
 ]
 
+// Assam Black Tea: price_1MlJoiKlVI2SIvCiDYoju1Fi
+// Jasmine Green Tea: price_1MlJlpKlVI2SIvCigCGZuK9q
+// Osmanthus Oolong Tea: price_1MlJpYKlVI2SIvCiCy79d8pZ
+
 const drinks = [
   // popular
-  { quantity: 1, category: 'Popular', name: "Jasmine Green Tea", info: 'Fresh brewed jasmine green tea leaves imported straight from China', price: 4.50, photo: greenTea, sugar: '', ice: '', custom: [] },
+  { id: 'price_1MlJlpKlVI2SIvCigCGZuK9q', quantity: 1, category: 'Popular', name: "Jasmine Green Tea", info: 'Fresh brewed jasmine green tea leaves imported straight from China', price: 4.50, photo: greenTea, sugar: '', ice: '', custom: [] },
   { quantity: 1, category: 'Popular', name: "Mango Avocado", info: 'Mango green tea with an avocado twist, only for the daring... and healthy', price: 5.50, photo: mangoPhoto, sugar: '', ice: '', custom: [] },
   { quantity: 1, category: 'Popular', name: "Watermelon Green Tea", info: 'Fresh cut watermelon blended with jasmine green tea', price: 5.50, photo: watermelonPhoto, sugar: '', ice: '', custom: [] },
   { quantity: 1, category: 'Popular', name: "Strawberry Matcha", info: 'Deep bitter matcha flown straight from Japan with an optional blend of strawberry', price: 5.50, photo: strawberryMatchaPhoto, sugar: '', ice: '', custom: [] },

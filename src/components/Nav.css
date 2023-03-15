@@ -1,48 +1,56 @@
- #nav {
-    margin: 4px 0 0 0;
+#nav {
+  margin: 4px 0 0 0;
 }
 
 #nav .navbar {
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  align-items: center;
 }
 
 #nav .drink-links {
-    width: 100%;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #nav img {
-    max-width: 40px;
-    margin: 0 10px;
+  max-width: 40px;
+  width: 100%;
+  margin: 0 10px;
 }
 
 #nav .drink-link {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    color: dimgray;
-    transition: 300ms;
-    white-space: nowrap;
-    margin: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: dimgray;
+  transition: 300ms;
+  white-space: nowrap;
+  margin: 0 20px;
 }
 
 #nav .drink-link:hover {
-    transform: scale(1.075);
-    transition: 300ms;
+  transform: scale(1.075);
+  transition: 300ms;
 }
 
 #nav .drink-link:active {
-    transform: scale(.9);
-    transform: 50ms;
-} 
+  transform: scale(0.9);
+  transform: 50ms;
+}
 
-/* swiper */
-.swiper-slide{
-    margin: 0 100px 0 0;
+/* MEDIA QUERIES */
+@media all and (min-width: 768) and (max-width: 1024px) {
+  #nav .drink-links {
+    margin: 0;
+    padding: 0;
+  }
+}
+@media all and (max-width: 480px) {
+  /* ---------- DRINK LIST ----------  */
+  #nav .drink-link {
+    margin: 6px;
+  }
 }

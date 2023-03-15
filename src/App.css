@@ -20,10 +20,19 @@ body::-webkit-scrollbar {
   display: flex;
 }
 
-
 /* TEST */
 #productCard {
   background-color: skyblue;
   width: 100px;
   margin: 10px;
+}
+
+/* MEDIA QUERIES */
+@media all and (max-width: 480px) {
+  
+  /* ---------- DRINK LIST ----------  */
+
+  body::-webkit-scrollbar {
+    overflow: hidden;
+  }
 }

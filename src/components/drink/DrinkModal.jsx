@@ -30,13 +30,8 @@ export default function DrinkModal( {drink, closeModal}) {
 
     if (isChecked) {
       drink.custom.push({topping, price});
-      console.log(drink.custom)
     } else {
-      for (let i in drink.custom) {
-        if (drink.custom[i] === topping){
-          drink.custom.splice(drink.custom[i]);
-        }
-      }
+      drink.custom = drink.custom.filter(item => item.topping !== topping)
     }
   }
 
@@ -159,7 +154,7 @@ export default function DrinkModal( {drink, closeModal}) {
 
               <div className="amount">
                 <button className="minus" onClick={()=>minus(drink)}>-</button>
-                  <input id="amount" type="number" defaultValue={1}/>
+                  <input id="amount" type="number" defaultValue={1} readOnly/>
                 <button className="add"onClick={()=>add(drink)}>+</button>
               </div>
 

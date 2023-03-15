@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import Drink from "../drink/Drink";
+import '../../App.css';
 import { drinks, categoryList } from "../../data";
 import AppContext from "../AppContext";
 

@@ -379,3 +379,80 @@
   transform: scale(1);
   transition: 50ms;
 }
+
+/* ---------- MEDIA QUERY ----------  */
+
+@media all and (max-width: 480px) {
+
+  #drink-modal .close-button {
+    position: absolute;
+    border: none;
+    background-color: lightgray;
+    padding: 8px 14px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  #drink-modal .container {
+    height: 550px;
+  }
+  
+  #drink-modal .content-container {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  #drink-modal .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  #drink-modal .content img {
+    height: auto;
+    font-size: 20px;
+    width: 70%;
+  }
+  #drink-modal .content h3 {
+    height: auto;
+    font-size: 20px;
+  }
+
+  #drink-modal .content div {
+    height: auto;
+    font-size: 20px;
+  }
+
+  #drink-modal .customizations-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  #drink-modal .request {
+    margin: 0 10px 70px;
+  }
+
+  #drink-modal .add-to-cart-border {  
+    display: none;
+  }
+  
+  #drink-modal .add-to-cart {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background-color: white;
+  }
+  
+}
+
+
+  
