@@ -1,5 +1,5 @@
 
-# Food Ordering Application (in progress)
+# Food Ordering Application
 
 My first React application which is an online food ordering system that focuses on boba tea.
 
