@@ -1,7 +1,7 @@
 
-# Food Ordering Application
+# Food Ordering System
 
-My first React application which is an online food ordering system that focuses on boba tea.
+My first React project showcasing a food ordering system designed for tablets in restaurants.
 
 Notable features:
 - shopping cart system
