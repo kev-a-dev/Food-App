@@ -17,7 +17,6 @@
 .store-name-wrapper {
   display: flex;
   flex: start;
-  margin: 0 30px;
 }
 
 .store-name {
