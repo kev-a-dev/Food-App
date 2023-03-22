@@ -1,0 +1,155 @@
+/* ---------- TITLE BAR ---------- */
+#title-bar {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 20px 0;
+  border-bottom: 2px solid lightgray;
+  /* display: grid; */
+  /* grid-template-columns: 33% 33% 33%; */
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 4px lightgray;
+}
+
+/* ---------- STORE NAME ---------- */
+
+.store-name-wrapper {
+  display: flex;
+  flex: start;
+}
+
+.store-name {
+  font-size: 30px;
+  color: dimgray;
+  margin: 0 40px;
+  white-space: nowrap;
+}
+
+/* ---------- NAV ---------- */
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- SEARCH ---------- */
+.search-bar-wrapper {
+  display: flex;
+  flex: end;;
+  width: 100%;
+  min-width: 300px;
+  margin: 0 30px;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+#search-bar {
+  height: 40px;
+  width: 100%;
+  border: 2px solid lightgray;
+  border-radius: 50px;
+  padding-left: 40px;
+  font-size: 18px;
+  color: gray;
+  outline: none;
+}
+
+#search-bar:hover {
+  border: 2px solid skyblue;
+  outline: none;
+}
+#search-bar:focus + .fa-magnifying-glass {
+  color: rgb(101, 183, 216);
+}
+
+.fa-magnifying-glass {
+  position: absolute;
+  left: 14px;
+  color: gray;
+}
+
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  
+  #title-bar {
+    display: flex;
+    padding: 0;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .store-name {
+    display: none;
+  }
+
+  #search-bar {
+    margin: 10px;
+    width: 200px;
+  }
+}
+
+@media all and (min-width: 1024px){
+  .search-bar-container{
+    margin-left: 30px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  #title-bar {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #title-bar .store-name {
+    font-size: 24px;
+    display: none;
+  }
+
+  #search-bar {
+    margin: 8px;
+  }
+}
+
+
+@media all and (max-width: 480px) {
+  
+  #title-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    flex-direction: column;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #title-bar .store-name {
+    font-size: 24px;
+    margin: 0;
+    display: none;
+  }
+  
+  #nav .drink-link {
+    margin: 0;
+  }
+
+  #nav .drink-link img {
+    display: none;
+  }
+
+  #search-bar {
+    margin: 4px;
+  }
+}
+
