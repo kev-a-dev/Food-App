@@ -80,41 +80,28 @@
 
 /* ---------- MEDIA QUERIES ---------- */
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media all and (max-width: 1400px) {
   #drink-list .category {
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 24px;
   }
+}
 
-  #drink-list {
-    margin-top: 50px;
+@media all and (max-width: 1080px) {
+  #drink .info-container {
+    padding: 10px;
+  }
+
+  #drink .photo-container {
+    margin: 0;
   }
 }
 
-
-@media all and (min-width: 480px) and (max-width: 768px) {
+@media all and (max-width: 1000px) {
   #drink-list .category {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    gap: 24px;
-  }
-
-  #drink-list {
-    margin-top: 50px;
-  }
-}
-
-@media all and (max-width: 480px) {
-    #drink-list {
-      margin-top: 50px;
-    }
-
-    #drink-list .category {
     display: grid;
     grid-template-columns: 100%;
     gap: 24px;
   }
-
-
 }
