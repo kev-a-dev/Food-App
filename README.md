@@ -8,9 +8,10 @@ Notable features:
 - item customizations
 - search and filter bar
 
+Project Link: https://kev-a-dev.github.io/Food-App/
+
 Drink images are from: https://www.flaticon.com/
 
-Project Link: https://kev-a-dev.github.io/Food-App/
 ## Tech Stack
 
 HTML, CSS, Javascript, React
